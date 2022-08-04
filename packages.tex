@@ -1,0 +1,189 @@
+% input encoding
+\usepackage[utf8]{inputenc}
+
+% output font encoding
+\usepackage[T1]{fontenc}
+
+% package for the English language
+\usepackage[english]{babel}
+
+% default graphics path
+\graphicspath{{logos/}{figures/}}
+
+% package to create diagrams and plot with TikZ
+\usepackage{pgfplots}
+% always use the newest version
+\pgfplotsset{compat=newest}
+% define the style of the connection of two lines
+\pgfplotsset{every axis/.append style={line join=bevel}}
+% generate a new style template
+\mode<beamer>{
+	\pgfplotsset{
+		beamer/.style={
+			width=0.8\textwidth,
+			height=0.45\textwidth,
+			legend style={font=\scriptsize},
+			tick label style={font=\footnotesize},
+			label style={font=\small},
+			max space between ticks=28,
+		}
+	}
+}
+\mode<handout>{
+	\pgfplotsset{
+		beamer/.style={
+			width=0.8\textwidth,
+			height=0.45\textwidth,
+			legend style={font=\scriptsize},
+			tick label style={font=\footnotesize},
+			label style={font=\small},
+			max space between ticks=25,
+		}
+	}
+}
+\mode<article>{
+	\pgfplotsset{
+		beamer/.style={
+			width=0.8\textwidth,
+			height=0.45\textwidth,
+			max space between ticks=35,
+		}
+	}
+}
+% format and size template for two plots side-by-side
+\pgfplotsset{
+	scriptsize/.style={
+		width=0.34\textwidth,
+		height=0.1768\textwidth,
+		legend style={font=\scriptsize},
+		tick label style={font=\scriptsize},
+		label style={font=\footnotesize},
+		title style={font=\footnotesize},
+		every axis title shift=0pt,
+		max space between ticks=25,
+		every mark/.append style={mark size=7},
+		major tick length=0.1cm,
+		minor tick length=0.066cm,
+	}
+}
+\pgfplotsset{
+	small/.style={
+		width=6.5cm,
+		height=,
+		tick label style={font=\footnotesize},
+		label style={font=\small},
+		legend style={font=\footnotesize},
+		max space between ticks=30,
+	}
+}
+% align legends entries to the left
+\pgfplotsset{legend cell align=left}
+% draw a main grid
+\pgfplotsset{xmajorgrids}
+\pgfplotsset{ymajorgrids}
+% number of minor ticks between two major tickmarks
+%\pgfplotsset{minor x tick num={3}}
+%\pgfplotsset{minor y tick num={3}}
+% draw a minor grid
+%\pgfplotsset{xminorgrids}
+%\pgfplotsset{yminorgrids}
+% scale only the axis using a certain width and height
+\pgfplotsset{scale only axis}
+% define colors like in MATLAB
+\definecolor{matlab1}{rgb}{0,0,1}
+\definecolor{matlab2}{rgb}{0,0.5,0}
+\definecolor{matlab3}{rgb}{1,0,0}
+\definecolor{matlab4}{rgb}{0,0.75,0.75}
+\definecolor{matlab5}{rgb}{0.75,0,0.75}
+\definecolor{matlab6}{rgb}{0.75,0.75,0}
+\definecolor{matlab7}{rgb}{0.25,0.25,0.25}
+% define a color cycle list like in MATLAB
+\pgfplotscreateplotcyclelist{matlab}{
+	{matlab1,solid},
+	{matlab2,dashed},
+	{matlab3,dashdotted},
+	{matlab4,dotted},
+	{matlab5,densely dashed},
+	{matlab6,densely dashdotted},
+	{matlab7,densely dotted}%this prevents an error
+}
+% use the earlier defined color list
+\pgfplotsset{cycle list name=matlab}
+% use the standard color list of pgfplots
+%\pgfplotsset{cycle list name=color list}
+% use only grayscale lines
+%\pgfplotsset{cycle list name=linestyles}
+% use a line width of 1pt
+\pgfplotsset{every axis plot/.append style={line width=1pt}}
+% use a comma as the dot separator for german documents
+\addto\extrasngerman{\pgfplotsset{/pgf/number format/.cd,set decimal separator={{{,}}}}}
+% use a half space as the 1000 separator
+\pgfplotsset{/pgf/number format/.cd,1000 sep={\,}}
+% define legend positions
+\pgfplotsset{/pgfplots/legend pos/north/.style={/pgfplots/legend style={at={(0.50,0.97)},anchor=north}}}
+\pgfplotsset{/pgfplots/legend pos/south/.style={/pgfplots/legend style={at={(0.50,0.03)},anchor=south}}}
+\pgfplotsset{/pgfplots/legend pos/east/.style={/pgfplots/legend style={at={(0.97,0.50)},anchor=east}}}
+\pgfplotsset{/pgfplots/legend pos/west/.style={/pgfplots/legend style={at={(0.03,0.50)},anchor=west}}}
+\pgfplotsset{/pgfplots/legend pos/outer north/.style={/pgfplots/legend style={at={(0.50,1.03)},anchor=south}}}
+
+% package for SI units
+\usepackage[binary-units]{siunitx}
+% real fractions
+\sisetup{per-mode=fraction,mode=math}
+% decimal marker in dependence from the language
+\addto\extrasngerman{\sisetup{output-decimal-marker={,}}}
+\addto\extrasenglish{\sisetup{output-decimal-marker={.}}}
+% range phrase in dependence from the language
+\addto\extrasngerman{\sisetup{range-phrase={ bis~}}} 
+\addto\extrasenglish{\sisetup{range-phrase={ to~}}}
+
+% A stand-alone package that implements several commands for including external animation and sound
+% files in a pdf document. The package can be used together with both dvips plus ps2pdf and pdflatex,
+% though the special sound support is available only in pdflatex.
+\usepackage{multimedia}
+
+% package to dissable floating in the article mode
+\usepackage{float}
+
+% package to change the line spacing
+\usepackage{setspace}
+
+% package for nice fractions in the text mode
+\usepackage{xfrac}
+% default with with a slash as in the usual math mode
+\UseCollection{xfrac}{plainmath}
+
+% nicer tables
+\usepackage{booktabs}
+
+% nicer quotation marks
+\usepackage{csquotes}
+
+% define labeling environment
+\makeatletter
+\newenvironment{labeling}[2][]{%
+  \def\sc@septext{#1}%
+  \list{}{\settowidth{\labelwidth}{{%
+        #2%
+          \sc@septext%
+      }}%
+    \leftmargin\labelwidth \advance\leftmargin by \labelsep
+    \let\makelabel\labelinglabel
+  }%
+}{%
+  \endlist
+}
+\newcommand\labelinglabel[1]{%
+  #1\hfil
+    \sc@septext%
+}
+\makeatother
+
+% BibLaTeX package for direct citations
+\usepackage[%
+	style=ieee,%				format as used at the IEEE
+	backend=biber,%			suppress warning
+]{biblatex}
+
+% database of references
+\addbibresource{literature.bib}

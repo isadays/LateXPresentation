@@ -1,0 +1,351 @@
+% beamer class
+\documentclass{beamer}
+
+% load all packages
+\input{packages}
+\usepackage{url}
+\usepackage{wrapfig}
+% style of the Chair for Electromagnetic Compatibility
+%\usepackage{beamer_emc}
+% style of the Institute for Medical Engineering
+%\usepackage{beamer_imt}
+% style of the Faculty of Electrical Engineering and Information Technology
+%\usepackage{beamer_feit}
+% style of the Otto-von-Guericke-University
+\usepackage{beamer_ovgu}
+% style of STIMULATE (Solution Centre for Image Guided Local Therapies)
+%\usepackage{beamer_stimulate}
+
+
+\title[Short Title]{Academic Writing Using \LaTeX}
+\author{Dias, Isabela P. L. \inst{1}}
+\institute[]{
+	\inst{1}%
+	Institute of Physics, University of São Paulo (USP)\\
+	Group Quantum Foundations
+}
+	\bibliography{references.bib}
+
+\mode<presentation>{\keywords{Put some keywords here, separated by commas, e.g. Non-Technical Project, Academic Writing}}
+\date[11/07/2022]{July 11th, 2022}
+
+\begin{document}
+
+\begin{frame}
+	\maketitle
+	% \maketitle also works in the article mode
+	% \titlepage only works for presentation
+\end{frame}
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{Introduction}
+	\begin{block}{Welcome!}
+	\begin{figure}
+		\centering
+			\includegraphics[height=5cm]{figures/timeline.pdf}
+		\caption{My academic journey.}
+		\label{fig:unilogo}
+	\end{figure}
+	\end{block}
+\end{frame}
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{Introduction}
+	\begin{block}{Objective:}
+		\begin{itemize}
+			\item \LaTeX \quad as a tool to write academic texts or lecture notes \nocite{Sasha}\nocite{Gray2003}
+		\end{itemize}
+	\end{block}
+	\begin{block}{Pronounce \LaTeX ~}
+		\begin{itemize}
+			\item "LAY-TECH"
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}[label=inhalt]{Overview}
+	\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+% only for the miniframe navigation
+
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{Questions}
+	\begin{block}{Time for questions:}
+		\begin{figure}
+		\centering
+			\includegraphics[height=5cm]{figures/questionstime.pdf}
+		\label{fig:questions}
+	\end{figure}
+	\end{block}
+\end{frame}
+
+\section{What is \LaTeX?}
+
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{What is \LaTeX?}
+	\begin{block}{\LaTeX is ...}
+	\begin{itemize}
+	    \item \textbf{Sophisticated} Software system for document preparation
+	    \item Specific programming language to write INPUT file,
+	    \item Program to interpret and compile the OUTPUT file,
+	    \item Highest typographical quality and professional layout.
+	\end{itemize}
+		\begin{figure}
+		\centering
+			\includegraphics[height=3cm]{tex.png}
+		\label{fig:texfile}
+	\end{figure}
+ 	\end{block}
+\end{frame}
+
+\subsection{History}
+%put that Leslie Lamport was the first developer and make a first manual
+\begin{frame}
+	\frametitle<presentation>{Brief history}
+	\begin{figure}
+		\centering
+			\includegraphics[height=5cm]{figures/texcreators.png}
+		\caption{Donald Knuth and Leslie Lamport.}
+		\label{fig:creators}
+	\end{figure}
+\end{frame}
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{How does it \textbf{look}?}
+	\begin{block}{\textbf{Article} class}
+		\begin{figure}
+		\centering
+			\includegraphics[height=6cm]{figures/lookslike.pdf}
+		\label{fig:texfile}
+	\end{figure}
+ 	\end{block}
+\end{frame}
+
+
+
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{How does it \textbf{look}?}
+	\begin{block}{\textbf{Formal Letter} class}
+		\begin{figure}
+		\centering
+			\includegraphics[height=6cm]{figures/lookslike2.pdf}
+		\label{fig:texfile}
+	\end{figure}
+ 	\end{block}
+\end{frame}
+
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{Basic \textbf{commands}}
+	\begin{block}{\textbf{Footnotes, Table of Contents, Bibliography}}
+		\begin{figure}
+		\centering
+			\includegraphics[height=6cm]{figures/basiccommands.pdf}
+		\label{fig:texfile}
+	\end{figure}
+ 	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle<presentation>{Graphs and Equations}
+		\begin{figure}
+		\centering
+			\includegraphics[height=6cm]{figures/graphs.pdf}
+		\label{fig:graphs}
+	\end{figure}
+%	\begin{figure}
+%		\centering
+%			\begin{tikzpicture}
+%				\begin{axis}[
+%					beamer,
+%					xlabel={time, $t$ (in \si{\milli\second})},
+%					ylabel={voltage, $u(t)$ (in \si{\volt})},
+%					xmin=0,xmax=20,
+%					ymin=-350,ymax=350,
+%					legend pos=south west,
+%					% example how to insert a line by giving a formula directly
+%					]
+%					\addplot+[
+%						domain=0:20,
+%						samples=101,
+%					] {sin(deg(x*2*pi/20))*sqrt(2)*230};
+%					\addlegendentry{sine wave-form};
+%					\addplot+[
+%						domain=0:20,
+%						samples=101,
+%					] {cos(deg(x*2*pi/20))*sqrt(2)*230};
+%					\addlegendentry{cosine wave-form};
+%				\end{axis}
+%			\end{tikzpicture}
+%		\caption{Harmonic time course of a voltage with a frequency of \SI{50}{\hertz} 
+%		and an effective value of \SI{230}{\volt}.}
+%		\label{fig:u_t_sinus}
+%	\end{figure}
+\end{frame}
+
+\subsection{Installation}
+
+\begin{frame}{Installation}
+
+	\begin{block}{Two steps are required}
+	\begin{itemize}
+	    \item \LaTeX distribution (MikTeX)
+	    \item Plain Text Editor.
+	    \item PDF Reader,
+	    \item or \textbf{NOTHING}.
+	\end{itemize}
+	
+ 	\end{block}
+\end{frame}
+
+\subsection*{}
+
+\begin{frame}{Installation}
+
+
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+\includegraphics[width=0.9\linewidth]{figures/magically.png} 
+\label{fig:wrapfig}
+\end{wrapfigure}
+	\begin{block}{\LaTeX distribution (MikTeX)}
+	\end{block}
+- Get a copy of MikTeX distribution from \url{https://miktex.org/}
+	     
+	   -  Install magically all packages. 
+	     
+	    - There are currently 5729 packages in the MiKTeX package repository.
+
+
+\end{frame}
+\subsection*{}
+\begin{frame}{Installation}
+
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+\includegraphics[width=0.9\linewidth]{figures/texstudio.png} 
+\label{fig:wrapfig}
+\end{wrapfigure}
+
+\begin{block}{Plain Text Editor}
+\end{block}
+- Integrated writing environment for creating \LaTeX documents
+
+- Syntax-highlighting,
+
+- Integrated viewer,
+
+- Reference checking.
+    
+\end{frame}
+\subsection*{}
+\begin{frame}{Installation}
+
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+\includegraphics[width=0.9\linewidth]{figures/overleaf.png} 
+\label{fig:wrapfig}
+\end{wrapfigure}
+
+\begin{block}{\textbf{Overleaf} -Remotely }
+\end{block}
+
+-  Collaborative cloud-based \LaTeX editor,
+
+- Editor used for writing, editing and publishing scientific documents,
+
+-  Provide official journal \LaTeX templates and direct submission links. 
+    
+\end{frame}
+
+
+
+\subsection{Advantages}
+
+\begin{frame}
+	\frametitle<presentation>{Advantages}
+\begin{block}{\textbf{Minimal} effort}
+\begin{itemize}
+    \item You only need to learn basic commands 
+    \item Complex structures : Footnotes, references, table of contents and bibliography
+    \item \LaTeX encourages authors to write well-sctructured texts
+    \item Runs on almost any hardware platform avaiable.
+\end{itemize}
+\end{block}
+\end{frame}
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{Disadivantages}
+\begin{block}{\textbf{Logical} Structure}
+\begin{itemize}
+\item Frustration for beginners (at first glance)
+ \item Markup language, the content is written in plain text and you can use commands to “order” how things should be displayed.
+  
+  
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+%\begin{frame}{Citations}
+	%\begin{block}{Don't use short citations:}
+	%	\begin{itemize}
+			%\item avoid short citations like~[1]
+			%\item no one will remember the numbers when the list of %references is shown
+%			\item use full citations instead
+%		\end{itemize}
+%	\end{block}
+%	\begin{block}{Example for a full citation:}
+%		\small\fullcite{hering:technical_reports}
+%	\end{block}
+%\end{frame}
+
+\section{Conclusion}
+
+% only for the miniframe navigation
+\subsection*{}
+
+\begin{frame}
+	\frametitle<presentation>{Conclusion}
+	\begin{block}{Results:}
+	  \begin{itemize}
+	  	\item Very useful for academic work, especially at the graduate level,
+	  	\item Most advanced math typesetting systems
+	  	\item \LaTeX allows you to make more consistent and more easily changeable documents
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% only for the miniframe navigation
+\subsection*{}
+\begin{frame}
+	\frametitle{Bibliography}
+	\printbibliography
+\end{frame}
+
+\section*{}
+
+\begin{frame}<beamer>{}
+	\begin{center}
+		Thanks for your attention!
+	\end{center}
+	\begin{center}
+		Are there questions?
+	\end{center}
+\end{frame}
+
+\end{document}
